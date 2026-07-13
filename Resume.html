@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anubhav Tripathi — Resume | Excel & Data Operations Freelancer</title>
+<meta name="description" content="Resume of Anubhav Tripathi, an Excel and data operations freelancer focused on clean spreadsheets, data entry, formatting, dashboards, and PDF-to-Excel work.">
+<meta name="theme-color" content="#1d5fe0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ Tokens ============ */
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f6f9fd;
+    --surface:#ffffff;
+    --grid:#dde4f1;
+    --grid-strong:#c7d2e8;
+    --ink:#0f2544;
+    --ink-soft:#57678a;
+    --ink-faint:#8b97b4;
+    --blue:#1d5fe0;
+    --blue-deep:#123f9e;
+    --blue-tint:#e8f1fe;
+    --header-bg:#eef3fc;
+    --radius:10px;
+    --shadow:0 1px 2px rgba(15,37,68,.05), 0 10px 28px rgba(15,37,68,.07);
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  [data-theme="dark"]{
+    --bg:#0b1a33;
+    --bg-soft:#0f2142;
+    --surface:#132a4d;
+    --grid:#24406c;
+    --grid-strong:#2f4f83;
+    --ink:#eaf1ff;
+    --ink-soft:#a9bade;
+    --ink-faint:#7a8db3;
+    --blue:#5b93ff;
+    --blue-deep:#8ab0ff;
+    --blue-tint:rgba(91,147,255,.16);
+    --header-bg:#152c52;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    transition:background .3s ease, color .3s ease;
+  }
+  h1,h2,h3{font-family:var(--font-display); margin:0; letter-spacing:-0.01em;}
+  p{margin:0;}
+  a{color:inherit;}
+  img,svg{display:block;}
+  button{font:inherit; cursor:pointer;}
+  .icon{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  ::selection{background:var(--blue-tint); color:var(--ink);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--blue); outline-offset:2px; border-radius:4px;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .skip-link{position:absolute; left:-999px; top:0; background:var(--blue); color:#fff; padding:10px 16px; border-radius:0 0 8px 0; z-index:200;}
+  .skip-link:focus{left:0;}
+
+  /* ============ Nav ============ */
+  .ribbon{
+    position:sticky; top:0; z-index:100;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--grid);
+  }
+  .ribbon-inner{
+    max-width:1120px; margin:0 auto; padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:14px; color:var(--ink-soft); text-decoration:none;}
+  .brand .dot{width:9px; height:9px; background:var(--blue); border-radius:2px;}
+  .brand strong{color:var(--ink); font-family:var(--font-display); font-size:16px; font-weight:700; letter-spacing:0;}
+  .nav-tabs{display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0;}
+  .nav-tabs a{
+    display:block; padding:10px 14px; font-size:14px; font-weight:500;
+    text-decoration:none; color:var(--ink-soft); border-bottom:2px solid transparent;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .nav-tabs a:hover, .nav-tabs a.active{color:var(--blue); border-color:var(--blue);}
+  .nav-actions{display:flex; align-items:center; gap:8px;}
+  .icon-btn{
+    display:flex; align-items:center; justify-content:center;
+    width:38px; height:38px; border-radius:8px; border:1px solid var(--grid);
+    background:var(--surface); color:var(--ink-soft);
+  }
+  .icon-btn:hover{color:var(--blue); border-color:var(--grid-strong);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 18px; border-radius:8px; font-size:14px; font-weight:600;
+    text-decoration:none; border:1px solid transparent; white-space:nowrap;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--blue); color:#fff;}
+  .btn-primary:hover{background:var(--blue-deep);}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--grid-strong);}
+  .btn-ghost:hover{border-color:var(--blue); color:var(--blue);}
+  .nav-toggle{display:none;}
+  .mobile-panel{display:none;}
+
+  @media (max-width:900px){
+    .nav-tabs, .nav-actions .btn-ghost{display:none;}
+    .nav-toggle{display:flex;}
+    .mobile-panel{
+      display:none; flex-direction:column; gap:2px;
+      border-top:1px solid var(--grid); background:var(--bg);
+      padding:8px 24px 16px;
+    }
+    .mobile-panel.open{display:flex;}
+    .mobile-panel a{padding:12px 4px; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--grid); font-size:15px;}
+    .mobile-panel .btn{margin-top:10px; justify-content:center;}
+  }
+
+  /* ============ Hero / Sheet ============ */
+  .hero{
+    background:
+      linear-gradient(var(--bg-soft), var(--bg)),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, var(--grid) 39px, var(--grid) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, var(--grid) 39px, var(--grid) 40px);
+    background-blend-mode:normal;
+    padding:56px 0 72px;
+    border-bottom:1px solid var(--grid);
+  }
+  .filename{
+    display:flex; align-items:center; gap:8px;
+    font-family:var(--font-mono); font-size:13px; color:var(--ink-faint);
+    margin-bottom:18px;
+  }
+  .filename .icon{width:15px;height:15px;}
+
+  .formula-bar{
+    display:flex; align-items:center; gap:10px;
+    background:var(--surface); border:1px solid var(--grid-strong); border-radius:8px;
+    padding:9px 14px; margin-bottom:28px; box-shadow:var(--shadow);
+    max-width:560px;
+  }
+  .fx-badge{
+    font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--blue);
+    border-right:1px solid var(--grid); padding-right:10px;
+  }
+  #formulaText{
+    font-family:var(--font-mono); font-size:13px; color:var(--ink-soft); white-space:nowrap; overflow:hidden;
+  }
+  #formulaText .caret{display:inline-block; width:2px; height:14px; background:var(--blue); margin-left:2px; vertical-align:middle; animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  .sheet{
+    background:var(--surface); border:1px solid var(--grid-strong); border-radius:12px;
+    box-shadow:var(--shadow); overflow:hidden;
+  }
+  .sheet-grid{display:grid; grid-template-columns:44px repeat(6,1fr);}
+  .col-headers{display:contents;}
+  .col-headers > div{
+    background:var(--header-bg); color:var(--ink-faint); font-family:var(--font-mono);
+    font-size:11px; text-align:center; padding:6px 0; border-bottom:1px solid var(--grid); border-right:1px solid var(--grid);
+  }
+  .row-num{
+    background:var(--header-bg); color:var(--ink-faint); font-family:var(--font-mono); font-size:11px;
+    display:flex; align-items:flex-start; justify-content:center; padding-top:14px;
+    border-bottom:1px solid var(--grid); border-right:1px solid var(--grid);
+  }
+  .cell{
+    position:relative; border-bottom:1px solid var(--grid); border-right:1px solid var(--grid);
+    padding:14px 16px; display:flex; flex-direction:column; justify-content:center; gap:4px;
+  }
+  .cell.blank{}
+  .cell.is-selected{outline:2px solid var(--blue); outline-offset:-2px; z-index:2; background:var(--blue-tint);}
+  .cell.is-selected::after{
+    content:''; position:absolute; right:-4px; bottom:-4px; width:7px; height:7px;
+    background:var(--blue); border:1.5px solid var(--surface); border-radius:1px;
+  }
+
+  .cell-name h1{font-size:clamp(26px,4vw,38px); font-weight:700;}
+  .photo-card{
+    display:flex; align-items:flex-start; justify-content:flex-start; padding:10px; background:var(--surface);
+  }
+  .photo-card img{
+    width:100%; height:100%; max-width:120px; max-height:120px; object-fit:cover; object-position:center top;
+    border-radius:12px; border:1px solid var(--grid-strong); box-shadow:var(--shadow);
+  }
+  .cell-name .role-tag{
+    margin-top:6px; display:inline-flex; align-items:center; gap:6px; width:fit-content;
+    font-family:var(--font-mono); font-size:11px; color:#1f8a5a;
+    background:color-mix(in srgb, #1f8a5a 12%, transparent); padding:3px 8px; border-radius:20px;
+  }
+  [data-theme="dark"] .cell-name .role-tag{color:#5fd0a0;}
+  .cell-name .role-tag .dot{width:6px; height:6px; background:currentColor; border-radius:50%;}
+
+  .cell-date .flabel, .stat-cell .flabel{font-family:var(--font-mono); font-size:11px; color:var(--ink-faint);}
+  .cell-date .fval{font-family:var(--font-mono); font-size:13px; color:var(--ink-soft);}
+
+  .cell-title p{font-size:17px; font-weight:600; color:var(--ink); font-family:var(--font-display);}
+  .cell-badge{align-items:center;}
+  .cell-badge span{
+    font-size:12px; color:var(--blue); background:var(--blue-tint); padding:5px 10px;
+    border-radius:20px; width:fit-content; font-weight:500;
+  }
+  .cell-about p{font-size:15px; color:var(--ink-soft); max-width:60ch;}
+
+  .stat-cell .fval{font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--ink);}
+  .stat-cell .flabel-sub{font-size:11px; color:var(--ink-faint); margin-top:2px;}
+
+  .cell-cta{flex-direction:row; align-items:center; gap:12px; flex-wrap:wrap;}
+
+  @media (max-width:720px){
+    .sheet-grid{grid-template-columns:26px 1fr;}
+    .col-headers{display:none;}
+    .sheet-grid .cell{grid-column:2 / -1 !important;}
+    .row-num{padding-top:14px;}
+  }
+
+  /* ============ Sections ============ */
+  .section{padding:88px 0;}
+  .section.alt{background:var(--bg-soft);}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:12px;
+    color:var(--blue); margin-bottom:14px;
+  }
+  .eyebrow::before{content:''; width:16px; height:1px; background:var(--blue);}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(24px,3.2vw,32px); margin-bottom:12px;}
+  .section-head p{color:var(--ink-soft); font-size:16px;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+
+  /* About */
+  .about-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:start;}
+  .about-copy p{color:var(--ink-soft); font-size:16px; margin-bottom:20px;}
+  .checklist{list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:12px;}
+  .checklist li{display:flex; gap:10px; font-size:14.5px; color:var(--ink-soft);}
+  .checklist .tick{
+    flex:none; width:18px; height:18px; border-radius:4px; background:var(--blue-tint); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; margin-top:2px;
+  }
+  .checklist .tick .icon{width:11px; height:11px; stroke-width:2.4;}
+  .facts-card{
+    background:var(--surface); border:1px solid var(--grid); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:24px;
+  }
+  .facts-card h3{font-size:13px; font-family:var(--font-mono); color:var(--ink-faint); margin-bottom:16px; font-weight:500;}
+  .facts-row{display:flex; justify-content:space-between; gap:12px; padding:11px 0; border-bottom:1px solid var(--grid); font-size:14px;}
+  .facts-row:last-of-type{border-bottom:none;}
+  .facts-row span:first-child{color:var(--ink-faint);}
+  .facts-row span:last-child{color:var(--ink); font-weight:500; text-align:right;}
+  .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+  .badge{
+    font-size:12px; padding:5px 10px; border-radius:20px; background:var(--blue-tint); color:var(--blue); font-weight:500;
+  }
+  @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
+
+  /* Skills */
+  .chip-strip{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{
+    font-family:var(--font-mono); font-size:13px; color:var(--ink-soft);
+    background:var(--surface); border:1px solid var(--grid); border-radius:6px;
+    padding:8px 12px; position:relative; transition:border-color .2s ease, color .2s ease;
+  }
+  .chip:hover, .chip:focus-visible{border-color:var(--blue); color:var(--blue); outline:none;}
+  .chip:hover::after{
+    content:''; position:absolute; right:-4px; bottom:-4px; width:6px; height:6px;
+    background:var(--blue); border:1px solid var(--surface); border-radius:1px;
+  }
+
+  /* Cards grid (services / projects) */
+  .card-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .card-grid.projects{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:900px){.card-grid{grid-template-columns:repeat(2,1fr);} .card-grid.projects{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.card-grid, .card-grid.projects{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--surface); border:1px solid var(--grid); border-radius:var(--radius);
+    padding:22px; position:relative; box-shadow:var(--shadow);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .card:hover{border-color:var(--blue); transform:translateY(-2px);}
+  .card:hover::after{
+    content:''; position:absolute; right:-4px; bottom:-4px; width:8px; height:8px;
+    background:var(--blue); border:2px solid var(--surface); border-radius:1px;
+  }
+  .card .icon-wrap{
+    width:38px; height:38px; border-radius:8px; background:var(--blue-tint); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .card h3{font-size:16px; margin-bottom:6px;}
+  .card p{font-size:13.5px; color:var(--ink-soft);}
+
+  .project-card .thumb{
+    display:grid; grid-template-columns:repeat(6,1fr); gap:3px;
+    background:var(--header-bg); border:1px solid var(--grid); border-radius:8px;
+    padding:10px; margin-bottom:14px;
+  }
+  .project-card .thumb span{height:9px; border-radius:2px; background:var(--grid-strong);}
+  .project-card .thumb span.a{background:var(--blue);}
+  .project-card .thumb span.b{background:var(--blue-tint);}
+
+  /* Stats */
+  .stats-band{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--grid); border:1px solid var(--grid); border-radius:var(--radius); overflow:hidden;
+  }
+  .stat{background:var(--surface); padding:30px 24px; text-align:center;}
+  .stat .flabel{font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); display:block; margin-bottom:8px;}
+  .stat .val{font-family:var(--font-display); font-size:30px; font-weight:700; color:var(--blue);}
+  .stat .cap{font-size:12.5px; color:var(--ink-soft); margin-top:4px;}
+  @media (max-width:640px){.stats-band{grid-template-columns:1fr;}}
+
+  /* Testimonials */
+  .testi-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:700px){.testi-grid{grid-template-columns:1fr;}}
+  .testi-card{
+    background:var(--surface); border:1px solid var(--grid); border-radius:var(--radius);
+    padding:24px; box-shadow:var(--shadow);
+  }
+  .testi-card p.quote{font-size:15px; color:var(--ink); margin-bottom:18px; line-height:1.6;}
+  .testi-who{display:flex; align-items:center; gap:10px;}
+  .avatar-tag{
+    width:34px; height:34px; border-radius:7px; background:var(--blue-tint); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:12px; font-weight:600;
+  }
+  .testi-who .name{font-size:13.5px; font-weight:600;}
+  .testi-who .role{font-size:12px; color:var(--ink-faint);}
+  .testi-note{font-size:12px; color:var(--ink-faint); margin-top:16px; font-style:italic;}
+
+  /* Contact */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media (max-width:800px){.contact-grid{grid-template-columns:1fr;}}
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:18px;}
+  .field label{font-size:13px; color:var(--ink-soft); font-weight:500;}
+  .field input, .field textarea{
+    font:inherit; font-size:14px; padding:11px 13px; border-radius:8px; border:1px solid var(--grid-strong);
+    background:var(--surface); color:var(--ink); resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{outline:2px solid var(--blue); outline-offset:1px;}
+  .form-note{font-size:12.5px; color:var(--ink-faint); margin-top:6px;}
+  .contact-info-card{
+    background:var(--surface); border:1px solid var(--grid); border-radius:var(--radius);
+    padding:26px; box-shadow:var(--shadow);
+  }
+  .contact-row{display:flex; align-items:center; gap:12px; padding:12px 0; border-bottom:1px solid var(--grid);}
+  .contact-row:last-of-type{border-bottom:none;}
+  .contact-row .icon-wrap{
+    width:34px; height:34px; border-radius:8px; background:var(--blue-tint); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .contact-row .label{font-size:12px; color:var(--ink-faint);}
+  .contact-row .value{font-size:14px; font-weight:500;}
+  .social-row{display:flex; gap:10px; margin-top:18px;}
+  .social-row a{
+    display:flex; align-items:center; gap:6px; font-size:13px; color:var(--ink-soft);
+    border:1px solid var(--grid); padding:8px 12px; border-radius:8px; text-decoration:none;
+  }
+  .social-row a:hover{color:var(--blue); border-color:var(--blue);}
+
+  /* Footer */
+  footer{border-top:1px solid var(--grid); padding:36px 0 28px; background:var(--bg-soft);}
+  .foot-tabs{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px;}
+  .foot-tabs a{
+    font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); text-decoration:none;
+    padding:8px 14px; background:var(--surface); border:1px solid var(--grid);
+    border-radius:8px 8px 0 0; border-bottom:2px solid transparent;
+  }
+  .foot-tabs a:hover{color:var(--blue); border-bottom-color:var(--blue);}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:12.5px; color:var(--ink-faint);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  @media print{
+    body{background:#fff; color:#000;}
+    .ribbon, .nav-toggle, .mobile-panel, .icon-btn, .btn, .form-note, .social-row, .foot-tabs{display:none !important;}
+    .hero{padding:20px 0 20px; border:none; background:#fff;}
+    .sheet{box-shadow:none; border-color:#ccc;}
+    .section{padding:24px 0;}
+    .section.alt{background:#fff;}
+    .card, .facts-card, .testi-card, .contact-info-card{box-shadow:none; border-color:#ddd;}
+    .wrap{max-width:none; padding:0 12px;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    a{color:inherit; text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- Icon sprite -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="3.5" y1="15.5" x2="20.5" y2="15.5"/><line x1="9.5" y1="3.5" x2="9.5" y2="20.5"/><line x1="15.5" y1="3.5" x2="15.5" y2="20.5"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M17.7 6.3l-2.1 2.1M8.4 15.6l-2.1 2.1"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="1.5"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="3" y1="15.5" x2="21" y2="15.5"/><line x1="10.5" y1="4.5" x2="10.5" y2="19.5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="3" y1="20" x2="21" y2="20"/><line x1="6.5" y1="20" x2="6.5" y2="10"/><line x1="12" y1="20" x2="12" y2="4.5"/><line x1="17.5" y1="20" x2="17.5" y2="14"/></symbol>
+  <symbol id="i-pivot" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><line x1="3.5" y1="11.5" x2="20.5" y2="11.5"/><line x1="11.5" y1="3.5" x2="11.5" y2="20.5"/><rect x="13" y="13" width="6" height="6" rx="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-funnel" viewBox="0 0 24 24"><path d="M4 5h16l-6.2 7.5V18l-3.6 2v-7.5z"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><rect x="3" y="3" width="10.5" height="14" rx="1.4"/><line x1="6" y1="7.2" x2="10.5" y2="7.2"/><line x1="6" y1="10.2" x2="10.5" y2="10.2"/><line x1="14.5" y1="12" x2="21" y2="12"/><path d="M18 9l3 3-3 3"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M6 2.5h9l5 5V21H6z"/><path d="M15 2.5V7.5h5"/><line x1="9" y1="12.5" x2="17" y2="12.5"/><line x1="9" y1="16.5" x2="17" y2="16.5"/><line x1="13" y1="9.5" x2="13" y2="19.5"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="12.5" x2="21" y2="12.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><line x1="4" y1="20" x2="20" y2="20"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.3 8.3 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3.5" y1="6.5" x2="20.5" y2="6.5"/><line x1="3.5" y1="12" x2="20.5" y2="12"/><line x1="3.5" y1="17.5" x2="20.5" y2="17.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24"><path d="M12 2.5L21.5 12 12 21.5 2.5 12z"/></symbol>
+</svg>
+
+<nav class="ribbon">
+  <div class="ribbon-inner">
+    <a class="brand" href="#home"><span class="dot" aria-hidden="true"></span><strong>Anubhav Tripathi</strong> · Resume</a>
+    <ul class="nav-tabs">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon" id="themeIcon"><use href="#i-moon"></use></svg>
+      </button>
+      <!-- Replace href with your actual resume file before publishing -->
+      <a class="btn btn-ghost" href="javascript:void(0)" onclick="window.print()">
+        <svg class="icon" style="width:15px;height:15px"><use href="#i-download"></use></svg> Download PDF
+      </a>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon" id="navToggleIcon"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-primary" href="resume.pdf" download>Download resume</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="wrap">
+
+    <div class="formula-bar">
+      <span class="fx-badge">Focus</span>
+      <span>Reliable Excel support for data entry, formatting, reporting, and clean data workflows.</span>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet-grid" id="sheetGrid">
+        <div class="col-headers">
+          <div></div><div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div>
+        </div>
+
+        <div class="row-num">1</div>
+        <div class="cell photo-card" style="grid-column:span 1;">
+          <img src="photo/CEO PHOTO.jpeg" alt="Profile photo of Anubhav Tripathi">
+        </div>
+        <div class="cell cell-name" style="grid-column:span 4;">
+          <h1>Anubhav Tripathi</h1>
+          <span class="role-tag"><span class="dot"></span>Open to freelance opportunities</span>
+        </div>
+        <div class="cell cell-date" style="grid-column:span 1;">
+          <span class="flabel">Location</span>
+          <span class="fval" id="todayVal">India</span>
+        </div>
+
+        <div class="row-num">2</div>
+        <div class="cell cell-title" style="grid-column:span 3;">
+          <p>Excel &amp; Data Operations Freelancer</p>
+        </div>
+        <div class="cell cell-badge" style="grid-column:span 2;">
+          <span>Accuracy-first, deadline-driven</span>
+        </div>
+        <div class="cell blank"></div>
+
+        <div class="row-num">3</div>
+        <div class="cell cell-about" style="grid-column:span 6;">
+          <p>I am a B.Tech Computer Science student and freelance Excel specialist who enjoys turning messy data into clean, structured spreadsheets. I work on data entry, cleaning, formatting, formulas, dashboards, and PDF-to-Excel conversion with a strong focus on accuracy, clarity, and timely delivery.</p>
+        </div>
+
+        <div class="row-num">4</div>
+        <div class="cell stat-cell" style="grid-column:span 2;">
+          <span class="flabel">Experience</span>
+          <span class="fval">1+ Yr</span>
+          <span class="flabel-sub">freelance Excel work</span>
+        </div>
+        <div class="cell stat-cell" style="grid-column:span 2;">
+          <span class="flabel">Projects</span>
+          <span class="fval">10+</span>
+          <span class="flabel-sub">completed projects</span>
+        </div>
+        <div class="cell stat-cell" style="grid-column:span 2;">
+          <span class="flabel">Client rating</span>
+          <span class="fval">4.5/5</span>
+          <span class="flabel-sub">based on feedback</span>
+        </div>
+
+        <div class="row-num">5</div>
+        <div class="cell cell-cta" style="grid-column:span 6;">
+          <a class="btn btn-primary" href="#projects">View selected work <svg class="icon" style="width:14px;height:14px"><use href="#i-branch"></use></svg></a>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="eyebrow">A2 — About</div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <h2>Professional, organized, and dependable</h2>
+          <p>I am a B.Tech Computer Science student with hands-on experience in Excel-based data work and a growing interest in data operations, reporting, and spreadsheet automation. I enjoy helping clients organize information clearly and build practical spreadsheets that are easy to use and maintain.</p>
+          <p>My approach is simple: understand the task, keep the work accurate, and communicate clearly from start to finish. Whether it is data entry, cleaning, formatting, report building, or PDF-to-Excel conversion, I focus on producing work that is useful and presentation-ready.</p>
+          <ul class="checklist">
+            <li><span class="tick"><svg class="icon"><use href="#i-check"></use></svg></span>Supported clients with day-to-day Excel and spreadsheet tasks</li>
+            <li><span class="tick"><svg class="icon"><use href="#i-check"></use></svg></span>Organized, cleaned, and formatted raw datasets for easier use</li>
+            <li><span class="tick"><svg class="icon"><use href="#i-check"></use></svg></span>Built simple dashboards and reports for better visibility</li>
+            <li><span class="tick"><svg class="icon"><use href="#i-check"></use></svg></span>Converted PDF documents into editable Excel sheets</li>
+            <li><span class="tick"><svg class="icon"><use href="#i-check"></use></svg></span>Delivered clear communication and dependable turnaround times</li>
+          </ul>
+        </div>
+        <div class="facts-card reveal">
+          <h3>QUICK FACTS</h3>
+          <div class="facts-row"><span>Role</span><span>Freelance Excel Assistant</span></div>
+          <div class="facts-row"><span>Education</span><span>B.Tech CSE, Lovely Professional University</span></div>
+          <div class="facts-row"><span>Focus</span><span>Data entry, cleaning, reporting</span></div>
+          <div class="facts-row"><span>Tools</span><span>Excel, Google Sheets, Office</span></div>
+          <div class="facts-row"><span>Availability</span><span>Open to new projects</span></div>
+          <div class="badges">
+            <span class="badge">Fast learner</span>
+            <span class="badge">Reliable communication</span>
+            <span class="badge">On-time delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section alt">
+    <div class="wrap">
+      <div class="eyebrow">A3 — Skills</div>
+      <div class="section-head reveal">
+        <h2>What I actually know how to do</h2>
+        <p>A working toolkit, not a buzzword list — every item here is something I use regularly.</p>
+      </div>
+      <div class="chip-strip reveal">
+        <span class="chip" tabindex="0">Microsoft Excel</span>
+        <span class="chip" tabindex="0">Data Entry</span>
+        <span class="chip" tabindex="0">Data Cleaning</span>
+        <span class="chip" tabindex="0">Spreadsheet Formatting</span>
+        <span class="chip" tabindex="0">Basic Dashboards</span>
+        <span class="chip" tabindex="0">Pivot Tables</span>
+        <span class="chip" tabindex="0">Charts</span>
+        <span class="chip" tabindex="0">Basic Excel Formulas</span>
+        <span class="chip" tabindex="0">VLOOKUP</span>
+        <span class="chip" tabindex="0">IF Functions</span>
+        <span class="chip" tabindex="0">PDF to Excel</span>
+        <span class="chip" tabindex="0">Google Sheets</span>
+        <span class="chip" tabindex="0">Microsoft Office</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="eyebrow">A4 — Services</div>
+      <div class="section-head reveal">
+        <h2>How I can help</h2>
+        <p>Practical Excel work, scoped clearly before we start so there are no surprises.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-grid"></use></svg></div>
+          <h3>Data Entry</h3>
+          <p>Getting raw information into a spreadsheet accurately, formatted the way you need it.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-sparkle"></use></svg></div>
+          <h3>Data Cleaning</h3>
+          <p>Fixing duplicates, blanks and inconsistent entries so your sheet is trustworthy again.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-table"></use></svg></div>
+          <h3>Excel Formatting</h3>
+          <p>Turning a messy sheet into something clean, readable and easy to hand off.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-pivot"></use></svg></div>
+          <h3>Pivot Tables</h3>
+          <p>Summarizing larger datasets so you can actually see what's going on.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-chart"></use></svg></div>
+          <h3>Charts</h3>
+          <p>Simple, clear visuals that make your numbers easier to explain to others.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-pdf"></use></svg></div>
+          <h3>PDF to Excel</h3>
+          <p>Converting PDF files into an editable, well-structured spreadsheet.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-sheet"></use></svg></div>
+          <h3>Google Sheets</h3>
+          <p>The same careful work, in Sheets, if that's what your team uses instead.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-wrap"><svg class="icon"><use href="#i-briefcase"></use></svg></div>
+          <h3>Custom Excel Templates</h3>
+          <p>Reusable templates built around how you actually work, not a generic layout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="section alt" style="padding-top:64px; padding-bottom:64px;">
+    <div class="wrap">
+      <div class="stats-band reveal">
+        <div class="stat">
+          <span class="flabel">Experience</span>
+          <div class="val">1+ Yr</div>
+          <div class="cap">freelance Excel experience</div>
+        </div>
+        <div class="stat">
+          <span class="flabel">Projects</span>
+          <div class="val">10+</div>
+          <div class="cap">completed projects</div>
+        </div>
+        <div class="stat">
+          <span class="flabel">Rating</span>
+          <div class="val">4.5/5</div>
+          <div class="cap">average client satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div class="eyebrow">A5 — Projects</div>
+      <div class="section-head reveal">
+        <h2>Recent work</h2>
+        <p>A few examples of the kind of spreadsheet work I take on.</p>
+      </div>
+      <div class="card-grid projects">
+        <div class="card project-card reveal">
+          <div class="thumb" aria-hidden="true"><span class="a"></span><span></span><span class="b"></span><span></span><span class="a"></span><span></span><span></span><span class="b"></span><span></span><span class="a"></span><span></span><span></span></div>
+          <h3>Sales Report Dashboard</h3>
+          <p>A monthly sales dashboard summarizing performance with charts and pivot tables.</p>
+        </div>
+        <div class="card project-card reveal">
+          <div class="thumb" aria-hidden="true"><span></span><span class="a"></span><span></span><span class="b"></span><span></span><span></span><span class="a"></span><span></span><span></span><span class="b"></span><span></span><span class="a"></span></div>
+          <h3>Inventory Tracker</h3>
+          <p>A stock-tracking sheet with automatic low-stock flags and category totals.</p>
+        </div>
+        <div class="card project-card reveal">
+          <div class="thumb" aria-hidden="true"><span class="b"></span><span></span><span class="a"></span><span></span><span></span><span class="a"></span><span></span><span class="b"></span><span></span><span></span><span class="a"></span><span></span></div>
+          <h3>Employee Attendance Sheet</h3>
+          <p>A clean attendance log with monthly summaries and simple conditional formatting.</p>
+        </div>
+        <div class="card project-card reveal">
+          <div class="thumb" aria-hidden="true"><span class="a"></span><span></span><span class="b"></span><span></span><span class="a"></span><span></span><span></span><span></span><span class="b"></span><span class="a"></span><span></span><span></span></div>
+          <h3>Monthly Budget Planner</h3>
+          <p>A personal budgeting sheet that splits income and expenses by category automatically.</p>
+        </div>
+        <div class="card project-card reveal">
+          <div class="thumb" aria-hidden="true"><span></span><span class="b"></span><span></span><span class="a"></span><span></span><span class="b"></span><span></span><span></span><span class="a"></span><span></span><span class="b"></span><span></span></div>
+          <h3>Data Cleaning Project</h3>
+          <p>Standardizing and de-duplicating a large messy dataset into a usable format.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="eyebrow">A6 — Feedback</div>
+      <div class="section-head reveal">
+        <h2>What clients have said</h2>
+        <p>A couple of short notes from recent work.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <p class="quote">"Anubhav cleaned up a messy inventory sheet for me quickly and explained what he'd changed. Straightforward to work with, and it saved me a lot of time."</p>
+          <div class="testi-who">
+            <div class="avatar-tag">PS</div>
+            <div><div class="name">Priya S.</div><div class="role">Small business owner</div></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <p class="quote">"I needed a PDF converted into an editable Excel sheet on short notice. Got it back accurate and on time, with the formatting I asked for."</p>
+          <div class="testi-who">
+            <div class="avatar-tag">RM</div>
+            <div><div class="name">Rohit M.</div><div class="role">Freelance consultant</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="testi-note">Illustrative feedback based on the kind of work described above — swap in real client quotes as they come in.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="eyebrow">A7 — Contact</div>
+      <div class="section-head reveal">
+        <h2>Let's talk about your spreadsheet</h2>
+        <p>Send a few details about what you need and I'll get back to you.</p>
+      </div>
+      <div class="contact-grid">
+        <form id="contactForm" class="reveal">
+          <div class="field">
+            <label for="cName">Name</label>
+            <input id="cName" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" rows="5" required placeholder="What would you like help with?"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-note" id="formNote">Your message will be opened in your email app so you can send it directly to your inbox.</p>
+        </form>
+        <div class="contact-info-card reveal">
+          <div class="contact-row">
+            <div class="icon-wrap"><svg class="icon"><use href="#i-mail"></use></svg></div>
+            <div><div class="label">Email</div><div class="value">anubhavtripathi305@gmail.com</div></div>
+          </div>
+          <div class="contact-row">
+            <div class="icon-wrap"><svg class="icon"><use href="#i-briefcase"></use></svg></div>
+            <div><div class="label">Availability</div><div class="value">Open to new projects</div></div>
+          </div>
+          <div class="contact-row">
+            <div class="icon-wrap"><svg class="icon"><use href="#i-sheet"></use></svg></div>
+            <div><div class="label">Works in</div><div class="value">Excel &amp; Google Sheets</div></div>
+          </div>
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/anubhav-tripathi-9281162a2/" target="_blank" rel="noopener noreferrer"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"></use></svg>LinkedIn</a>
+            <a href="https://www.instagram.com/anbv_11?igsh=YjYxOWgzb25ydWRm" target="_blank" rel="noopener noreferrer"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"></use></svg>Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-tabs">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Anubhav Tripathi — built with care, always improving.</span>
+      <span style="font-family:var(--font-mono);">Sheet1 of 1</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Year */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Today cell */
+  document.getElementById('todayVal').textContent = new Date().toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+
+  /* Theme toggle (in-memory only, no storage) */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  var themeIconUse = document.getElementById('themeIcon').querySelector('use');
+  themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    themeIconUse.setAttribute('href', next === 'dark' ? '#i-sun' : '#i-moon');
+  });
+
+  /* Mobile nav */
+  var navToggle = document.getElementById('navToggle');
+  var mobilePanel = document.getElementById('mobilePanel');
+  var navToggleIconUse = document.getElementById('navToggleIcon').querySelector('use');
+  navToggle.addEventListener('click', function(){
+    var open = mobilePanel.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggleIconUse.setAttribute('href', open ? '#i-close' : '#i-menu');
+  });
+  mobilePanel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobilePanel.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+      navToggleIconUse.setAttribute('href','#i-menu');
+    });
+  });
+
+  /* Active nav tab on scroll */
+  var sections = ['home','about','skills','services','projects','contact'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.nav-tabs a'));
+  if('IntersectionObserver' in window){
+    var navObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var id = entry.target.id;
+          tabs.forEach(function(t){ t.classList.toggle('active', t.getAttribute('href') === '#'+id); });
+        }
+      });
+    }, {rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(function(s){ navObserver.observe(s); });
+  }
+
+  /* Scroll reveal */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var revealObserver = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  /* Hero cell selection cycle */
+  var cellsToCycle = document.querySelectorAll('.cell-name, .cell-title, .stat-cell, .cell-cta');
+  if(cellsToCycle.length){
+    var idx = 0;
+    cellsToCycle[0].classList.add('is-selected');
+    if(!reduceMotion){
+      setInterval(function(){
+        cellsToCycle[idx].classList.remove('is-selected');
+        idx = (idx + 1) % cellsToCycle.length;
+        cellsToCycle[idx].classList.add('is-selected');
+      }, 2600);
+    }
+  }
+
+  /* Contact form -> mailto */
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cName').value;
+    var email = document.getElementById('cEmail').value;
+    var message = document.getElementById('cMessage').value;
+    var subject = encodeURIComponent('Excel project inquiry from ' + name);
+    var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:anubhavtripathi305@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('formNote').textContent = 'Opening your email app now…';
+  });
+})();
+</script>
+</body>
+</html>
